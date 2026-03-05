@@ -5,8 +5,8 @@ import Keyboard from './components/Keyboard.jsx';
 import UsedLetters from './components/UsedLetters.jsx';
 import ResultModal from './components/ResultModal.jsx';
 
-const WORDS = ['REACT', 'HANGMAN', 'VITE', 'JAVASCRIPT', 'COMPONENT', 'KEYBOARD'];
-const MAX_WRONG = 5;
+const WORDS = ['REACT', 'HANGMAN', 'MOREHOUSE', 'JAVASCRIPT', 'COMPONENT','FUNCTION', 'STATE', 'PROPS', 'HOOKS'];
+const MAX_WRONG = 6;
 
 const getRandomWord = () => WORDS[Math.floor(Math.random() * WORDS.length)];
 

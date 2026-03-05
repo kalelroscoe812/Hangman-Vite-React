@@ -1,45 +1,39 @@
 import React from 'react';
+import noose from '../assets/noose.png';
+import upperbody from '../assets/upperbody.png';
+import oneArm from '../assets/1arm.png';
+import bothArms from '../assets/botharms.png';
+import oneLeg from '../assets/1leg.png';
+import dead from '../assets/Dead.png';
 
 const HangmanFigure = ({ wrongGuesses }) => {
-  // wrongGuesses: 0–5 (for 5 lives you have 6 states: 0..5)
+  // Map wrongGuesses to corresponding image
+  const getImageSrc = () => {
+    switch (wrongGuesses) {
+      case 0:
+        return null;
+      case 1:
+        return noose;
+      case 2:
+        return upperbody;
+      case 3:
+        return oneArm;
+      case 4:
+        return bothArms;
+      case 5:
+        return oneLeg;
+      case 6:
+      default:
+        return dead;
+    }
+  };
+
+  const imageSrc = getImageSrc();
+
   return (
-    <svg height="250" width="200" className="hangman-figure">
-      {/* Gallows */}
-      <line x1="10" y1="240" x2="150" y2="240" stroke="#000" strokeWidth="4" />
-      <line x1="40" y1="20" x2="40" y2="240" stroke="#000" strokeWidth="4" />
-      <line x1="40" y1="20" x2="140" y2="20" stroke="#000" strokeWidth="4" />
-      <line x1="140" y1="20" x2="140" y2="50" stroke="#000" strokeWidth="4" />
-
-      {/* Head */}
-      {wrongGuesses > 0 && (
-        <circle cx="140" cy="70" r="20" stroke="#000" strokeWidth="3" fill="none" />
-      )}
-
-      {/* Body */}
-      {wrongGuesses > 1 && (
-        <line x1="140" y1="90" x2="140" y2="150" stroke="#000" strokeWidth="3" />
-      )}
-
-      {/* Left arm */}
-      {wrongGuesses > 2 && (
-        <line x1="140" y1="110" x2="115" y2="135" stroke="#000" strokeWidth="3" />
-      )}
-
-      {/* Right arm */}
-      {wrongGuesses > 3 && (
-        <line x1="140" y1="110" x2="165" y2="135" stroke="#000" strokeWidth="3" />
-      )}
-
-      {/* Left leg */}
-      {wrongGuesses > 4 && (
-        <line x1="140" y1="150" x2="120" y2="190" stroke="#000" strokeWidth="3" />
-      )}
-
-      {/* Right leg */}
-      {wrongGuesses > 5 && (
-        <line x1="140" y1="150" x2="160" y2="190" stroke="#000" strokeWidth="3" />
-      )}
-    </svg>
+    <div className="hangman-figure">
+      {imageSrc && <img src={imageSrc} alt={`Hangman state ${wrongGuesses}`} />}
+    </div>
   );
 };
 

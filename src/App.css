@@ -12,6 +12,21 @@
   align-items: center;
 }
 
+/* hangman figure */
+.hangman-figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  min-width: 200px;
+}
+
+.hangman-figure img {
+  max-width: 200px;
+  max-height: 250px;
+  object-fit: contain;
+}
+
 /* word display */
 .word-display {
   display: flex;
