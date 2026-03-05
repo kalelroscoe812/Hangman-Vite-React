@@ -28,7 +28,7 @@ const App = () => {
     (letter) => {
       if (!letter || typeof letter !== 'string') return;
       const upper = letter.toUpperCase();
-      if (!/^[A-Z]$/.test(upper)) return; // only single letters
+      if (!/^[A-Z]$/.test(upper)) return;
       if (guessedLetters.includes(upper) || hasWon || hasLost) return;
 
       setGuessedLetters((prev) => [...prev, upper]);
@@ -40,11 +40,9 @@ const App = () => {
     [guessedLetters, hasWon, hasLost, word],
   );
 
-  // Keyboard input support: only accept A-Z single characters
   useEffect(() => {
     const handleKeyDown = (e) => {
       const key = e.key;
-      // Accept only single-letter keys a-z or A-Z
       if (/^[a-zA-Z]$/.test(key)) {
         handleGuess(key);
       }

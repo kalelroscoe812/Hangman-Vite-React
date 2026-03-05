@@ -7,7 +7,7 @@ import oneLeg from '../assets/1leg.png';
 import dead from '../assets/Dead.png';
 
 const HangmanFigure = ({ wrongGuesses }) => {
-  // Map wrongGuesses to corresponding image
+
   const getImageSrc = () => {
     switch (wrongGuesses) {
       case 0:
