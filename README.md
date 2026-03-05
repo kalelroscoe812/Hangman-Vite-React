@@ -2,7 +2,7 @@
 
 ## Features
 
-- **Current Hangman Figure:** SVG-based drawing that adds a body part for each wrong guess.
+- **Current Hangman Figure:** PNG-based drawing that adds a body part for each wrong guess.
 - **On-Screen Keyboard:** Clickable/touchable keyboard for letter selection, plus physical keyboard support.
 - **Used Letters Display:** Shows all letters the user has already chosen.
 - **New Game Button:** Instantly starts a new round with a random word.
@@ -12,7 +12,7 @@
 
 - **Frontend:** React (Vite)
 - **Styling:** Plain CSS
-- **Containerization:** Docker + Nginx
+- **Containerization:** Docker 
 
 ## Getting Started (Local)
 
